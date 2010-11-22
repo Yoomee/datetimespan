@@ -22,7 +22,7 @@ class DateTimeSpan
     to = ''
     differing = false
     parts.reverse.each do |part|
-      if part[0, 1]
+      if part[0, 1] == '%'
         from_part = @start_dt.strftime(part)
         to_part = @end_dt.strftime(part)
         if from_part != to_part || differing

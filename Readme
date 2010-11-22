@@ -1,0 +1,25 @@
+datetimespan gem
+================
+
+This gem allows rendering of date/time span strings based on a format.
+
+Example
+-------
+
+dts = DateTimeSpan.new(Date.new(2010, 12, 1), Date.new(2010, 12, 2))
+dts.to_s
+ -> "Wednesday  1 - Thursday  2 December 2010"
+
+The signature of the important methods is as follows:
+
+DateTimeSpan.new(start_dt, end_dt, format = nil, separator = nil)
+
+DateTimeSpan#to_s(format = nil, separator = nil)
+
+When format or separator are nil, DateTimeSpan.default_format and DateTimeSpan.default_separator are used.
+These start as "%A %e %B %Y" and " - " respectively
+
+
+Limitations
+-----------
+Currently, it only works for hierarchically ordered date-formats (so not US).

@@ -35,7 +35,11 @@ class DateTimeSpan
         from.prepend(part) if differing
       end
     end
-    "#{from}#{@separator}#{to}"
+    if differing
+      "#{from}#{@separator}#{to}"
+    else
+      to
+    end
   end    
   
   def parts
